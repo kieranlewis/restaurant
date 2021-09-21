@@ -1,1 +1,3 @@
-console.log('Hello Kieran');
+import Logo from './restaurant-logo.png';
+
+console.log(Logo);
