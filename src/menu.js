@@ -1,5 +1,24 @@
 const content = document.querySelector('#content');
 
+const menu = [
+    {
+        name: 'Spicy Wings',
+        price: '$8',
+    },
+    {
+        name: 'Nugs',
+        price: '$6'
+    },
+    {
+        name: 'Curly Fries',
+        price: '$4.50'
+    },
+    {
+        name: 'Soft Drinks',
+        price: '$4.50'
+    }
+];
+
 const makeContent = () => {
     // create header
     const header = document.createElement('h1');
@@ -13,21 +32,21 @@ const makeContent = () => {
 function createMenu() {
     const menuItems = document.createElement('ul');
 
-    const wings = document.createElement('li');
-    wings.textContent = 'Spicy Wings';
-    menuItems.appendChild(wings);
+    for(let i = 0; i < menu.length; i++) {
+        const menuItem = menu[i];
+        const ul = document.createElement('ul');
+        ul.textContent = menuItem["name"];
 
-    const nuggets = document.createElement('li');
-    nuggets.textContent = 'Nugs';
-    menuItems.appendChild(nuggets);
+        for(const key in menuItem) {
+            if(key !== 'name') {
+                const li = document.createElement('li');
+                li.textContent = `${menuItem[key]}`
+                ul.appendChild(li);
+            }
+        }
 
-    const curlies = document.createElement('li');
-    curlies.textContent = 'Curly Fries';
-    menuItems.appendChild(curlies);
-
-    const softDrink = document.createElement('li');
-    softDrink.textContent = 'Soft Drinks';
-    menuItems.appendChild(softDrink);
+        menuItems.appendChild(ul);
+    }
 
     content.appendChild(menuItems);
 }
