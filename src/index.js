@@ -3,8 +3,10 @@ import { makeContent as menuContent } from './menu';
 import { makeContent as contactContent } from './contact';
 
 const content = document.querySelector('#content');
+const header = document.querySelector('header');
+console.log(header);
 
-function createTabs() {
+function createNavBar() {
     const tabs = ['Home', 'Menu', 'Contact'];
 
     for(let i = 0; i < tabs.length; i++) {
@@ -12,14 +14,12 @@ function createTabs() {
         button.textContent = tabs[i];
         button.setAttribute('id', tabs[i] + '-btn');
         button.addEventListener('click', switchTab);
-        content.appendChild(button);
+        header.appendChild(button);
     }
 }
 
 function switchTab() {
-    console.log(this.id);
-    content.innerHTML = '';
-    createTabs();
+    content.innerHTML = ''; // wipe out current content
     
     switch (this.id) {
         case 'Home-btn':
@@ -34,8 +34,13 @@ function switchTab() {
     }
 }
 
-createTabs();
-homeContent();
+function init() {
+    createNavBar();
+    homeContent();
+}
+
+init();
+
 
 
 
