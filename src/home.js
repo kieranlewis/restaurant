@@ -19,4 +19,6 @@ const makeContent = () => {
     content.appendChild(blurb);
 }
 
-export { makeContent }
+export {
+    makeContent
+}
