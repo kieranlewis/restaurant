@@ -4,7 +4,6 @@ import { makeContent as contactContent } from './contact';
 
 const content = document.querySelector('#content');
 const header = document.querySelector('header');
-console.log(header);
 
 function createNavBar() {
     const tabs = ['Home', 'Menu', 'Contact'];
