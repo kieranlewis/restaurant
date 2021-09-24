@@ -6,7 +6,7 @@ const content = document.querySelector('#content');
 const makeContent = () => {
     // create header
     const header = document.createElement('h1');
-    header.textContent = 'Los Pollos Hermanos';
+    header.textContent = 'LOS POLLOS HERMANOS';
     content.appendChild(header);
 
     // create logo

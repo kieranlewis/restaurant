@@ -13,7 +13,7 @@ function createNavBar() {
     for(let i = 0; i < tabs.length; i++) {
         // creating buttons
         const button = document.createElement('button');
-        button.textContent = tabs[i];
+        button.textContent = tabs[i].toUpperCase();
         button.setAttribute('id', tabs[i] + '-btn');
         button.addEventListener('click', switchTab);
 
