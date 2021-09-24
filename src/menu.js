@@ -1,21 +1,30 @@
+import Wings from './images/wings.jpg';
+import Curlies from './images/curlies.jpg';
+import Nuggets from './images/nuggets.jpg';
+import Drinks from './images/drinks.jpg';
+
 const content = document.querySelector('#content');
 
 const menu = [
     {
         name: 'Spicy Wings',
         price: '$8',
+        image: Wings
     },
     {
         name: 'Nugs',
-        price: '$6'
+        price: '$6',
+        image: Nuggets
     },
     {
         name: 'Curly Fries',
-        price: '$4.50'
+        price: '$4.50',
+        image: Curlies
     },
     {
         name: 'Soft Drinks',
-        price: '$4.50'
+        price: '$4.50',
+        image: Drinks
     }
 ];
 
@@ -40,7 +49,14 @@ function createMenu() {
         for(const key in menuItem) {
             if(key !== 'name') {
                 const li = document.createElement('li');
-                li.textContent = `${menuItem[key]}`
+
+                if(key == 'image') {
+                    const logo = new Image();
+                    logo.src = menuItem[key];
+                    li.appendChild(logo);
+                } else {
+                    li.textContent = `${menuItem[key]}`;
+                }
                 ul.appendChild(li);
             }
         }
