@@ -1,4 +1,5 @@
 import Logo from './images/restaurant-logo.png';
+import Logo2 from './images/breaking-bad-los-pollos-hermanos.jpg';
 
 const content = document.querySelector('#content');
 
@@ -10,7 +11,9 @@ const makeContent = () => {
 
     // create logo
     const logo = new Image();
-    logo.src = Logo;
+    logo.src = Logo2;
+    logo.style.height = '300px';
+    logo.style.width = '300px';
     content.appendChild(logo);
 
     // create blurb
