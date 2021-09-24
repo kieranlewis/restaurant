@@ -21,6 +21,10 @@ function createNavBar() {
         button.style.border = 'none';
         button.style.color = 'white';
         button.style.backgroundColor = 'blue';
+        button.style.fontSize = '16px';
+        button.style.margin = '8px 0 8px 0';
+        button.style.paddingRight = '40px';
+
         header.appendChild(button);
     }
 }
@@ -45,9 +49,14 @@ function applyStyles() {
     header.style.display = 'flex';
     header.style.justifyContent = 'center';
     header.style.backgroundColor = 'blue';
+    header.style.position = 'absolute';
+    header.style.left = 0;
+    header.style.right = 0;
+    header.style.top = 0;
 
     content.style.display = 'flex';
     content.style.flexDirection = 'column';
+    content.style.marginTop = '20px';
 
     body.style.backgroundColor = 'rgba(254,220,0,255)';
 }
