@@ -7,12 +7,18 @@ const header = document.querySelector('header');
 
 function createNavBar() {
     const tabs = ['Home', 'Menu', 'Contact'];
+    header.style.display = 'flex';
+    header.style.justifyContent = 'center';
 
     for(let i = 0; i < tabs.length; i++) {
+        // creating buttons
         const button = document.createElement('button');
         button.textContent = tabs[i];
         button.setAttribute('id', tabs[i] + '-btn');
         button.addEventListener('click', switchTab);
+
+        // applying style to buttons
+        
         header.appendChild(button);
     }
 }
@@ -35,6 +41,8 @@ function switchTab() {
 
 function init() {
     createNavBar();
+    content.style.display = 'flex';
+    content.style.flexDirection = 'column';
     homeContent();
 }
 
