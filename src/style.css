@@ -25,7 +25,9 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    top: 0
+    top: 0;
+    max-width: 100%;
+    min-width: 916px;
 }
 
 #content {
@@ -55,6 +57,7 @@ li img {
 li {
     color: rgba(36,66,136,255);
     list-style-type: none;
+    text-align: center;
 }
 
 #content > ul {
@@ -68,4 +71,12 @@ li {
     margin-bottom: 20px;
     max-width: 500px;
     padding: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li:first-child {
+    font-weight: bold;
 }
