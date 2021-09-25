@@ -46,21 +46,19 @@ function createContacts() {
     for(let i = 0; i < contacts.length; i++) {
         const contact = contacts[i];
         const ul = document.createElement('ul');
-        ul.textContent = contact["name"];
 
         for(const key in contact) {
-            if(key !== 'name') {
-                const li = document.createElement('li');
+            const li = document.createElement('li');
 
-                if(key == 'image') {
-                    const logo = new Image();
-                    logo.src = contact[key];
-                    li.appendChild(logo);
-                } else {
-                    li.textContent = `${contact[key]}`;
-                }
-               ul.appendChild(li);
+            if(key == 'image') {
+                const logo = new Image();
+                logo.src = contact[key];
+                li.appendChild(logo);
+            } else {
+                li.textContent = `${contact[key]}`;
             }
+            
+            ul.appendChild(li);
         }
 
         contactList.appendChild(ul);

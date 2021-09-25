@@ -44,21 +44,19 @@ function createMenu() {
     for(let i = 0; i < menu.length; i++) {
         const menuItem = menu[i];
         const ul = document.createElement('ul');
-        ul.textContent = menuItem["name"];
 
         for(const key in menuItem) {
-            if(key !== 'name') {
-                const li = document.createElement('li');
+            const li = document.createElement('li');
 
-                if(key == 'image') {
-                    const logo = new Image();
-                    logo.src = menuItem[key];
-                    li.appendChild(logo);
-                } else {
-                    li.textContent = `${menuItem[key]}`;
-                }
-                ul.appendChild(li);
+            if(key == 'image') {
+                const logo = new Image();
+                logo.src = menuItem[key];
+                li.appendChild(logo);
+            } else {
+                li.textContent = `${menuItem[key]}`;
             }
+
+            ul.appendChild(li);     
         }
 
         menuItems.appendChild(ul);
